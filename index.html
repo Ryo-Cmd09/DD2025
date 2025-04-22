@@ -76,29 +76,9 @@
     <div class="final-button-container">
         <button onclick="location.href='notas.html'">Ver Notitas 💌</button>
       </div>
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
-<script src="script.js"></script>
+      
 
-<!-- Efecto de corazones y redirección -->
-<script>
-  const heartButton = document.getElementById('heartButton');
-
-  heartButton.addEventListener('click', () => {
-    // Corazones confetti
-    confetti({
-      particleCount: 100,
-      spread: 120,
-      origin: { y: 0.6 },
-      emojis: ['💜', '💖', '💌'],
-      scalar: 1.2,
-    });
-
-    // Redirección suave
-    setTimeout(() => {
-      window.location.href = 'notas.html';
-    }, 1000);
-  });
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>      
+</html>
