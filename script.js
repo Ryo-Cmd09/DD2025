@@ -20,7 +20,7 @@ document.querySelectorAll('.heart-btn').forEach(btn => {
         
         const nameElement = document.getElementById('name');
         nameElement.innerHTML = '';
-        const nameText = "Tu Nombre"; // Cambia por tu nombre
+        const nameText = "Bryan 💜"; // Cambia por tu nombre
         let i = 0;
         
         function typeWriter() {
