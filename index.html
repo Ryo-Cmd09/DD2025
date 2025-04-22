@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Meses de Amor 💜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nuestros 2 Meses 💜</h1>
+        
+        <!-- Sección de tarjetas -->
+        <div class="cards-container">
+            <!-- Tarjeta 1 - Foto -->
+            <div class="card">
+                <div class="photo-card">
+                    <img src="wawa1.jpg" alt="Nosotros">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="photo-card">
+                    <img src="wawa2.png" alt="Nosotros">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="photo-card">
+                    <img src="wawa3.jpg" alt="Nosotros">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="photo-card">
+                    <img src="wawa4.jpg" alt="Nosotros">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="photo-card">
+                    <img src="wawa5.jpg" alt="Nosotros">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="photo-card">
+                    <img src="wawa6.jpg" alt="Nosotros">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="photo-card">
+                    <img src="wawa7.jpg" alt="Nosotros">
+                </div>
+            </div>
+            
+            <!-- Tarjeta 2 - Mensaje -->
+            <div class="card">
+                <div class="text-card">
+                    <h2>Nuestra Historia</h2>
+                    <p>"Cada día a tu lado es un regalo del universo..."</p>
+                    <div class="heart-btn">💜</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mensaje secreto -->
+        <div class="message hidden" id="secretMessage">
+            <p>"Desde el primer momento supe que eras especial. 60 días contigo y mi corazón sigue acelerándose..."</p>
+            <p>- Con amor, <span id="name">[Ryo]</span></p>
+        </div>
+    </div>
+
+    <!-- From Uiverse.io by cssbuttons-io --> 
+    <div class="final-button-container">
+        <button onclick="location.href='notas.html'">Ver Notitas 💌</button>
+      </div>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+
+<!-- Efecto de corazones y redirección -->
+<script>
+  const heartButton = document.getElementById('heartButton');
+
+  heartButton.addEventListener('click', () => {
+    // Corazones confetti
+    confetti({
+      particleCount: 100,
+      spread: 120,
+      origin: { y: 0.6 },
+      emojis: ['💜', '💖', '💌'],
+      scalar: 1.2,
+    });
+
+    // Redirección suave
+    setTimeout(() => {
+      window.location.href = 'notas.html';
+    }, 1000);
+  });
+</script>
+</body>
+</html>      

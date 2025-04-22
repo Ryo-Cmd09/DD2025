@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Ti 💌</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #4a148c, #7b1fa2);
+      font-family: 'Courier New', monospace;
+      color: #f3e5f5;
+      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .notas-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 700px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      white-space: pre-wrap;
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="notas-box" id="typewriter">
+    <!-- Aquí va el texto por animación JS -->
+    <span class="cursor">|</span>
+  </div>
+
+  <script>
+    const text = `Mi amor...
+
+Hoy solo quería dejarte unas palabras, algo que se quede contigo aunque yo no esté frente a ti.
+
+Gracias por ser mi refugio, por tu risa que ilumina mis días, por esos ojos que me miran como si yo fuera el universo.
+
+No hay letra suficiente que diga lo mucho que significas para mí.
+
+Te amo con cada latido, con cada instante, con todo lo que soy 💜
+
+- Bryan 💜`;
+
+    const box = document.getElementById("typewriter");
+    const cursor = box.querySelector(".cursor");
+    let i = 0;
+
+    function type() {
+      if (i < text.length) {
+        const char = text.charAt(i);
+        box.insertBefore(document.createTextNode(char), cursor);
+        i++;
+        setTimeout(type, 40); // Velocidad de escritura
+      }
+    }
+
+    type();
+  </script>
+</body>
+</html>
