@@ -12,16 +12,18 @@
       color: #f3e5f5;
       padding: 40px 20px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+      box-sizing: border-box;
     }
 
     .notas-box {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 15px;
-      padding: 30px;
+      padding: 30px 20px;
       max-width: 700px;
       width: 100%;
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
@@ -40,11 +42,69 @@
     @keyframes blink {
       50% { opacity: 0; }
     }
+
+    @media (max-width: 600px) {
+      .notas-box {
+        font-size: 1em;
+        padding: 25px 15px;
+      }
+    }
+
+    button {
+      --glow-color: rgb(217, 176, 255);
+      --glow-spread-color: rgba(191, 123, 255, 0.781);
+      --enhanced-glow-color: rgb(231, 206, 255);
+      --btn-color: rgb(100, 61, 136);
+      border: .25em solid var(--glow-color);
+      padding: 1em 3em;
+      color: var(--glow-color);
+      font-size: 15px;
+      font-weight: bold;
+      background-color: var(--btn-color);
+      border-radius: 1em;
+      outline: none;
+      box-shadow: 0 0 1em .25em var(--glow-color),
+             0 0 4em 1em var(--glow-spread-color),
+             inset 0 0 .75em .25em var(--glow-color);
+      text-shadow: 0 0 .5em var(--glow-color);
+      position: relative;
+      transition: all 0.3s;
+      margin-top: 40px;
+    }
+
+    button::after {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      top: 120%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--glow-spread-color);
+      filter: blur(2em);
+      opacity: .7;
+      transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+    }
+
+    button:hover {
+      color: var(--btn-color);
+      background-color: var(--glow-color);
+      box-shadow: 0 0 1em .25em var(--glow-color),
+             0 0 4em 2em var(--glow-spread-color),
+             inset 0 0 .75em .25em var(--glow-color);
+    }
+
+    button:active {
+      box-shadow: 0 0 0.6em .25em var(--glow-color),
+             0 0 2.5em 2em var(--glow-spread-color),
+             inset 0 0 .5em .25em var(--glow-color);
+    }
   </style>
 </head>
 <body>
+
+  <!-- Nota con efecto máquina de escribir -->
   <div class="notas-box" id="typewriter">
-    <!-- Aquí va el texto por animación JS -->
     <span class="cursor">|</span>
   </div>
 
@@ -70,11 +130,17 @@ Te amo con cada latido, con cada instante, con todo lo que soy 💜
         const char = text.charAt(i);
         box.insertBefore(document.createTextNode(char), cursor);
         i++;
-        setTimeout(type, 40); // Velocidad de escritura
+        setTimeout(type, 40); // Velocidad
       }
     }
 
     type();
   </script>
+
+  <!-- Botón para regresar al inicio -->
+  <a href="index.html">
+    <button>Volver conmigo 💜</button>
+  </a>
+
 </body>
 </html>
