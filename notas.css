@@ -13,23 +13,52 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .notes-container {
   max-width: 600px;
+  width: 100%;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 40px;
   text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  border: 2px solid var(--lavanda); /* Borde visible */
+}
+
+.note {
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 4px solid var(--lavanda);
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.note h3 {
+  margin-top: 0;
+  color: var(--lavanda);
 }
 
 .note p {
   font-size: 1.2em;
   line-height: 1.7;
   white-space: pre-line;
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
 .back-button {
@@ -49,4 +78,33 @@ body {
 .back-button:hover {
   background: #f3e5f5;
   box-shadow: 0 0 20px var(--lavanda);
+}
+
+/* Ajustes para dispositivos pequeños */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+
+  .notes-container {
+    padding: 20px;
+    max-width: 100%;
+    border-radius: 15px; /* Ajustar el radio del borde */
+    border-width: 1px; /* Reducir el borde */
+    border-color: var(--lavanda); /* Asegurarse de que el borde sea visible */
+  }
+
+  .note {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .note p {
+    font-size: 1em; /* Ajusta el tamaño de la fuente */
+  }
+
+  .back-button {
+    font-size: 14px;
+    padding: 0.7em 1.2em;
+  }
 }
