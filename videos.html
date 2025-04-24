@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mis Videos para Ti 💜</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .video-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .video-section h2 {
+      margin-bottom: 30px;
+      color: var(--lavanda, #f3e5f5);
+    }
+
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    .back-button {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💜 Videos solo para ti 💜</h1>
+
+    <div class="video-section">
+      <h2>🎬 Videos de nosotros </h2>
+      <div class="video-container">
+        <div>
+          <h3>🌸 Canción dedicada para ti 💜</h3>
+          <video controls>
+            <source src="videos/video1.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+          </video>
+        </div>
+
+        <div>
+          <h3> Gracias por llegar cuando no buscaba nada en realidad
+            no sabia ni que hacer con mi vida te agradezco enormemente
+            por quedarte en mi vida 💜</h3>
+          <video controls>
+            <source src="videos/video2.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+          </video>
+        </div>
+
+        <div>
+          <h3>No sabes lo feliz que me haces cuando sonríes me haces
+            completamente feliz mi niña hermosa te amo demasiado!💜</h3>
+          <video controls>
+            <source src="videos/video3.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+          </video>
+        </div>
+
+        <!-- Nuevo video agregado -->
+        <div>
+          <h3>✨ 💕 Eres mi baile inolvidable porque no te quiero olvidar
+            y la verdad nunca en la vida quiero olvidarte mi princesa 
+            soy capaz de buscarte en este vida una y mil veces 
+            como en las otras vidas si es necesario. 💕✨</h3>
+          <video controls>
+            <source src="videos/video4.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 40px;">
+      <a href="index.html">
+        <button>Volver conmigo 💜</button>
+      </a>
+      <a href="notas.html">
+        <button>Ver notitas 💕</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
