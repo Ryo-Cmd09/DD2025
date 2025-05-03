@@ -263,14 +263,21 @@ button {
   justify-content: center;
   z-index: 9999;
   animation: fadeOut 1s ease-in 3s forwards; /* Desaparece después de 3s */
+  -webkit-animation: fadeOut 1s ease-in 3s forwards; /* Compatibilidad con Safari y móviles */
+  -moz-animation: fadeOut 1s ease-in 3s forwards; /* Compatibilidad con Firefox en móviles */
+  -ms-animation: fadeOut 1s ease-in 3s forwards; /* Compatibilidad con IE en móviles */
+  animation-fill-mode: forwards; /* Asegura que la animación se mantenga después de completarse */
 }
 
 /* Imagen del rinoceronte */
 .rhino-image {
-  width: 50%;          /* 50% del ancho de la pantalla */
-  max-width: 250px;    /* Tamaño máximo de la imagen */
+  width: 50%;
+  max-width: 250px;
   animation: zoomIn 1.2s ease; /* Animación de entrada */
-  border-radius: 10px; /* Un borde redondeado, opcional */
+  -webkit-animation: zoomIn 1.2s ease; /* Compatibilidad con Safari y móviles */
+  -moz-animation: zoomIn 1.2s ease; /* Compatibilidad con Firefox en móviles */
+  -ms-animation: zoomIn 1.2s ease; /* Compatibilidad con IE en móviles */
+  border-radius: 10px;
 }
 
 /* Animación de entrada: zoom */
@@ -285,8 +292,26 @@ button {
   }
 }
 
+@-webkit-keyframes zoomIn {
+  0% {
+    -webkit-transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /* Animación de desaparición */
 @keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes fadeOut {
   to {
     opacity: 0;
     visibility: hidden;
@@ -296,14 +321,14 @@ button {
 /* Responsividad para pantallas más pequeñas */
 @media (max-width: 768px) {
   .rhino-image {
-    width: 60%;          /* Aumentamos ligeramente el tamaño en pantallas medianas */
-    max-width: 200px;    /* Tamaño máximo reducido */
+    width: 60%;
+    max-width: 200px;
   }
 }
 
 @media (max-width: 480px) {
   .rhino-image {
-    width: 80%;          /* En pantallas muy pequeñas, la imagen se hace más pequeña */
-    max-width: 180px;    /* Tamaño máximo reducido para pantallas pequeñas */
+    width: 80%;
+    max-width: 180px;
   }
 }
