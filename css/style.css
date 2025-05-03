@@ -267,7 +267,7 @@ button {
 
 /* Imagen del rinoceronte */
 .rhino-image {
-  width: 70%;          /* 70% del ancho de la pantalla */
+  width: 50%;          /* 50% del ancho de la pantalla */
   max-width: 250px;    /* Tamaño máximo de la imagen */
   animation: zoomIn 1.2s ease; /* Animación de entrada */
   border-radius: 10px; /* Un borde redondeado, opcional */
@@ -296,14 +296,14 @@ button {
 /* Responsividad para pantallas más pequeñas */
 @media (max-width: 768px) {
   .rhino-image {
-    width: 80%;          /* Aumentamos el tamaño en pantallas pequeñas */
-    max-width: 200px;    /* Reducimos el tamaño máximo */
+    width: 60%;          /* Aumentamos ligeramente el tamaño en pantallas medianas */
+    max-width: 200px;    /* Tamaño máximo reducido */
   }
 }
 
 @media (max-width: 480px) {
   .rhino-image {
-    width: 90%;          /* En pantallas muy pequeñas, la imagen será más grande */
-    max-width: 150px;    /* Tamaño máximo aún más pequeño */
+    width: 80%;          /* En pantallas muy pequeñas, la imagen se hace más pequeña */
+    max-width: 180px;    /* Tamaño máximo reducido para pantallas pequeñas */
   }
 }
